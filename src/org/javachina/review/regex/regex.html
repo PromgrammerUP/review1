@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function go(){
+		//var id = document.myForm.userId.value;
+		var textElement = document.getElementById("testId");
+		var uValue = textElement.value;
+		var regex = /^\w{3,32}$/;//定义正则表达式，^:正则表达式的开头，$：正则表达式的结尾
+		//匹配3到32位的单词字符
+		if(regex.test(uValue)){//test相当于java中的matches方法
+			alert("模式匹配");
+		}else{
+			alert("模式不匹配");
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="myForm">
+		<input type="text" name="userId" size="30" id="testId">
+		<input type="button" value="click" onclick="go()">
+	</form>
+</body>
+</html>
